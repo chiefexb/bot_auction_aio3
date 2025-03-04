@@ -13,6 +13,7 @@ services:
   db:
     image: mysql:8.0.36
     container_name: db
+    hostname: mysql
     command: --init-file /data/application/init.sql
     restart: always
     env_file:
@@ -27,7 +28,7 @@ services:
       - IS_DOCKER=true
     build: .
     container_name: bot
-    command: bash -c "alembic upgrade head && alembic revision --autogenerate && alembic upgrade head && python start_bot.py"
+    command: bash -c "alembic revision --autogenerate && alembic upgrade head && python start_bot.py"
     env_file:
       - .env
     restart: always
