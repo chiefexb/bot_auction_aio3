@@ -2,6 +2,7 @@ services:
   redis:
     image: redis:7.2
     container_name: redis
+    hostname: redis
     restart: on-failure
     ports:
       - "6379:6379"
@@ -28,7 +29,7 @@ services:
       - IS_DOCKER=true
     build: .
     container_name: bot
-    command: bash -c "alembic revision --autogenerate && alembic upgrade head && python start_bot.py"
+    command: bash -c "cd /app &&alembic upgrade head &&alembic revision --autogenerate && alembic upgrade head && python start_bot.py"
     env_file:
       - .env
     restart: always
