@@ -97,7 +97,7 @@ async def start(message: types.Message, state: FSMContext, command: CommandObjec
     logging.info(f"tg_id: {message.chat.id} {message.chat.username}")
     text = _(f'<b>Оберіть мову / Choose a language:</b>')
     if isinstance(message, types.Message):
-        await message.a {message.chat}nswer(text=text,
+        await message.answer(text=text,
                              reply_markup=client_kb.language_kb)
     elif isinstance(message, types.CallbackQuery):
         await message.message.edit_text(text=text,
