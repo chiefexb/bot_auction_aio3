@@ -6,6 +6,20 @@ from database.models.base import Base
 
 class Advertisement(Base):
     """
+    Модель объявления.
+    Атрибуты:
+     id(int): Уникальный идентификатор объявления.
+     owner_telegram_id (str): Telegram ID владельца объявления.
+     Описание (str): Описание объявления.
+     photo_id(str): ID фото объявления.
+     video_id(str): ID видео объявления.
+     approved (bool): Флажок одобрения объявления.
+     message_id(str): ID сообщения объявления.
+     city(str): Город объявления.
+     photos_link (str): Ссылка на фото объявления.
+     post_link(str): Ссылка на пост объявления.
+     new_text(str): Новый текст объявления.
+     post_per_day(int): Количество постов в день.
     Модель оголошення.
 
     Атрибути:

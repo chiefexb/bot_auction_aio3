@@ -16,6 +16,23 @@ class GroupType(PyEnum):
 
 class ChannelGroup(Base):
     """
+    Модель групового чата
+
+    Атрибуты:
+     id(int): Уникальный идентификатор чата.
+     chat_name (str): Имя чата.
+     owner_telegram_id (str): Telegram ID владельца чата.
+     chat_id(str): Уникальный идентификатор чата.
+     chat_type (str): Тип чата (group, channel, или supergroup).
+     chat_link(str): Ссылка на чат.
+     auction_sub_time(int): Время подписки на аукцион.
+     auction_paid (bool): Флаг оплаты аукциона.
+     auction_token (str): Токен аукциона.
+     ads_sub_time(int): Время подписки на объявление.
+     ads_paid(bool): Флажок оплаты на объявление.
+     ads_token (str): Токен объявления.
+     free_trial(int): Время unix бесплатной подписки.
+
     Модель групового чату.
 
     Атрибути:

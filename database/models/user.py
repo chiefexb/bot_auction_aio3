@@ -9,6 +9,20 @@ from database.models.base import Base
 
 class User(Base):
     """
+    Модель пользователя.
+
+     Атрибуты:
+     telegram_id(int): Уникальный Telegram ID пользователя.
+     language (str): Язык интерфейса, выбранный пользователем.
+     created_at (datetime): Дата и время создания записи.
+     updated_at (datetime): Дата и время последнего обновления записи.
+     reserve_time_minute (datetime.time): Время резерва лота.
+     anti_sniper(datetime.time): Время антиснайпера.
+     advert_subscribe_time(int): Время жизни платежного токена.
+     user_adv_token (str): Токен пользователя оплаты.
+     partner_referral_token (str): Токен реферальной ссылки.
+     merchant_id(str): ID активированного мерчанта.
+
     Модель користувача.
 
     Атрибути:

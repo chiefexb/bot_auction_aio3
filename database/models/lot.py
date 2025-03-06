@@ -6,6 +6,30 @@ from database.models.base import Base
 
 class Lot(Base):
     """
+    Атрибуты:
+     id(int): Уникальный идентификатор лота.
+     owner_id (int): Telegram ID владельца лота.
+     title (str): Название лота.
+     description (str): Описание лота.
+     start_price(float): Начальная цена лота.
+     current_price (float): Текущая цена лота.
+     bid_count(int): Количество сделанных ставок.
+     created_at (datetime): Дата и время создания лота.
+     updated_at (datetime): Дата и время последнего обновления.
+     approved (bool): Флажок одобрения лота.
+     photo_id (str): ID фото лота.
+     video_id (str): ID видео лота.
+     price_steps(str): Шаги цены лота.
+     lot_time_living(int): Время жизни лота.
+     bid_time(datetime): Дата и время последней ставки.
+     lot_link(str): Ссылка на лот.
+     message_id(str): ID сообщения лота.
+     paypal_token(str): Токен PayPal.
+     currency (str): Валюта лота.
+     city ​​(str): Город лота.
+     photos_link (str): Ссылка на фото лота.
+     new_text (str): Новый текст лота, ожидающий подтверждения модератором.
+
     Модель лота.
 
     Атрибути:
@@ -58,4 +82,3 @@ class Lot(Base):
     new_text: Mapped[str] = mapped_column(Text, nullable=True)
     group_fk: Mapped[str] = mapped_column(ForeignKey('ChannelGroup.chat_id', ondelete='CASCADE'))
     group: Mapped["ChannelGroup"] = relationship(back_populates="lot")
-

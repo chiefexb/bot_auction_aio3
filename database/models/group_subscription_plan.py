@@ -14,6 +14,18 @@ class GroupType(PyEnum):
 
 class GroupSubscriptionPlan(Base):
     """
+    Модель подписки на группу. У одной группы – одна подписка.
+
+     Атрибуты:
+     group (ChannelGroup): Объект группы.
+     auction_sub_time(int): Время подписки на аукцион.
+     auction_paid (bool): Флаг оплаты аукциона.
+     auction_token (str): Токен аукциона.
+     ads_sub_time(int): Время подписки на объявление.
+     ads_paid(bool): Флажок оплаты на объявление.
+     ads_token (str): Токен объявления.
+     free_trial (int): Время unix бесплатной подписки
+
     Модель підписки на групу. В одної групи - одна підписка.
 
     Атрибути:
