@@ -94,7 +94,8 @@ async def start(message: types.Message, state: FSMContext, command: CommandObjec
     if interrupt_start:
         return
     await state.set_state(FSMClient.language)
-    text = _('<b>Оберіть мову / Choose a language:</b>')
+    logging.info(message)
+    text = _('для налагодження tg_id:<b>Оберіть мову / Choose a language:</b>')
     if isinstance(message, types.Message):
         await message.answer(text=text,
                              reply_markup=client_kb.language_kb)
